@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+#pattern{
+  z-index: -1;
+  position: fixed;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  list-style-type: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+ul li:hover {
+  background: #D6D58E;
+}
+
+ul li.checked {
+  background: #9FC131;
+  font-style: italic;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  content: "";
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 16px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 10px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 14px 16px 14px 16px;
+}
+
+.close:hover {
+  background-color: #f78501;
+  color: white;
+
+}
+
+.header {
+  background-color: #005C53;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+img {
+  background-color: white;
+}
+
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+.button {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.button:hover {
+  background-color: #bbb;
+}
+
+.wrapper {
+  text-align: center;
+  height: 120px;
+}
+
+.wrapper span {
+  font-family: "Dangrek";
+  -webkit-text-stroke-width: 1.25px;
+  -webkit-text-stroke-color: #000;
+  font-size: 50px;
+  text-shadow: 0 0px #042940, 0 0px #005C53;
+  transform: translate(0, 50%) rotate(2deg);
+  animation: jump 3s ease-in-out infinite;
+  display: inline-block;
+  color: #fff;
+  -webkit-transform: translate(0, 50%) rotate(2deg);
+  -moz-transform: translate(0, 50%) rotate(2deg);
+  -ms-transform: translate(0, 50%) rotate(2deg);
+  -o-transform: translate(0, 50%) rotate(2deg);
+  -webkit-animation: jump 3s ease-in-out infinite;
+}
+
+@keyframes jump {
+  33% {
+    transform: translate(0, 0) rotate(-5deg);
+    -webkit-transform: translate(0, 0) rotate(-5deg);
+    -moz-transform: translate(0, 0) rotate(-5deg);
+    -ms-transform: translate(0, 0) rotate(-5deg);
+    -o-transform: translate(0, 0) rotate(-5deg);
+}
+}
+
+.content{
+  background: rgba(0, 0, 0, 0.33);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.filter-green{
+  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+  -webkit-filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
+
+.counter {
+  margin-top: 10px;
+  padding: 10px;
+  width: 40px;
+  color: #005C53;
+  background: rgb(159,193,49);
+  background: linear-gradient(90deg, rgba(159,193,49,1) 0%, rgba(214,213,142,1) 68%);
+  border: 1px solid #D6D58E;
+  border-radius: 79% 21% 54% 46% / 30% 30% 70% 70% ;
+  -webkit-border-radius: 79% 21% 54% 46% / 30% 30% 70% 70% ;
+  -moz-border-radius: 79% 21% 54% 46% / 30% 30% 70% 70% ;
+  -ms-border-radius: 79% 21% 54% 46% / 30% 30% 70% 70% ;
+  -o-border-radius: 79% 21% 54% 46% / 30% 30% 70% 70% ;
+}
+
+/* Responsive */
+@media screen and (max-height: 200px) {
+  .wrapper {
+    transform: scale(0.3,0.3);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .wrapper span {
+      font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 1310px) {
+  #pattern {
+      width: 150%;
+    }
+}
+
+
+@media screen and (max-width: 875px) {
+  #pattern {
+    width: 300%;
+  }
+}
+
+@media screen and (max-width: 394px) {
+  #pattern {
+      width: 500%;
+    }
+  .wrapper span {
+    font-size: 30px;
+  }
+}
